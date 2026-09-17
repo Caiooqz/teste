@@ -1,0 +1,53 @@
+import java.util.Scanner
+public class Atv {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        int idade;
+        int anos;
+        int meses;
+        String formacao;
+
+       
+
+        System.out.println("Digite a idade: ");
+        idade = sc.nextInt();
+
+        System.out.println("Digite a quantidade de anos na empresa: ");
+        anos = sc.nextInt();
+
+        System.out.println("Digite a quantidade de meses na empresa: ");
+        meses =  sc.nextInt();
+
+        System.out.println("Possui formação na area? Digite S/N: ");
+        formacao = sc.next();
+
+        int exp = anos * 12 + meses;
+
+
+    if (idade < 16 || idade > 60 ||  anos < 0 || meses < 0 || meses > 11 || (!formacao.equals("S") && !formacao.equals("N"))) {
+        System.out.println("DADOS DE ENTRADA INVALIDOS");
+    }
+ 
+    else if (idade >= 21 && idade <= 30 && exp >= 18 && formacao.equals("S")) {
+        System.out.println("APROVADO PARA ENTREVISTA");
+        }
+
+    else if (idade >= 31 && idade <= 40 && exp >= 60 && formacao.equals("S")) {
+        System.out.println("APROVADO PARA ENTREVISTA");
+        }   
+    else if (idade > 40 && exp >= 120) {
+        System.out.println("LISTA DE ESPERA");
+        } 
+    else if (idade < 21 && exp >= 1) {
+    System.out.println("LISTA DE ESPERA");
+        } 
+    else {
+    System.out.println("NAO APROVADO PARA ENTREVISTA");
+}
+   
+
+
+    }
+}
